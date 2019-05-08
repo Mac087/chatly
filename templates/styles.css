@@ -1,0 +1,83 @@
+.navbar {
+  min-height: 80px;
+}
+
+.navbar-brand {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  line-height: 46px;
+  font-size: 42px;
+}
+
+.navbar {
+  margin-bottom: 0px !important;
+}
+
+.namespaces {
+  background-image: linear-gradient(#343a40, #8d97a2);
+  min-height: 100%;
+}
+
+.rooms {
+  /* background-color: #D3D9DE; */
+  background-image: linear-gradient(white, #8d97a2);
+  min-height: 100%;
+}
+
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  /* Set the fixed height of the footer here */
+  line-height: 80px;
+  /* Vertically center the text there */
+  background-color: #8d97a2;
+}
+
+.icon {
+  width: 60px;
+}
+
+.room-list li {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-top: 5px;
+}
+
+.room-header {
+  background-image: linear-gradient(to right, white, #8d97a2);
+  min-height: 5vh;
+}
+
+.user-image img {
+  width: 30px
+}
+
+#messages li {
+  padding: 5px 10px;
+  display: flex;
+  align-items: stretch;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #3B4048;
+  max-height: 85%;
+  overflow: auto;
+}
+
+.box {
+  min-height: calc(100vh - 160px);
+}
+
+#user-input {
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 98%
+}

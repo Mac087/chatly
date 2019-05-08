@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles.css" rel="stylesheet" type="text/css">
+  <title>Chatly</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Chatly</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container-fluid box">
+    <div class="row box">
+      <div class="col-1 namespaces">
+        <div class="namespace center-block text-center mt-3" ns="/wiki"><img class="icon" src="./assets/astronaut.svg"></div>
+        <div class="namespace center-block text-center mt-3 yolo" ns="/mozilla"><img class="icon" src="./assets/asteroid.svg"></div>
+      </div>
+      <div class="col-2 rooms">
+        <h6 class="text-center mt-3 text-muted">Channels</h6>
+        <ul class="room-list">
+          <li><i class="fab fa-slack-hash"></i> Main Channel</li>
+          <li><i class="fab fa-slack-hash"></i> Second Channel</li>
+        </ul>
+      </div>
+      <div class="col-9 message-form">
+        <div class="room-header row mb-4">
+          <div class="col-3 d-inline-block my-auto"><span class="curr-room-text">Current Room</span> <span class="curr-room-num-users">Users <i class="fas fa-user"></i></span></div>
+        </div>
+        <div>
+          <ul id="messages" class="col-sm-12">
+            <li>
+              <div class="user-image">
+                <img src="./assets/square-1.png" />
+              </div>
+              <div class="user-message ml-2">
+                <div class="user-name-time font-weight-bold">rbunch <span>1:25 pm</span></div>
+                <div class="message-text">I went running today.</div>
+              </div>
+            </li>
+
+            <li>
+              <div class="user-image">
+                <img src="https://via.placeholder.com/30" />
+              </div>
+              <div class="user-message">
+                <div class="user-name-time">rbunch <span>2:25 pm</span></div>
+                <div class="message-text">I'm getting my tires changed this afternoon.</div>
+              </div>
+            </li>
+            <li>
+              <div class="user-image">
+                <img src="https://via.placeholder.com/30" />
+              </div>
+              <div class="user-message">
+                <div class="user-name-time">rbunch <span>2:29 pm</span></div>
+                <div class="message-text">I like history.</div>
+              </div>
+            </li>
+            <li>
+              <div class="user-image">
+                <img src="https://via.placeholder.com/30" />
+              </div>
+              <div class="user-message">
+                <div class="user-name-time">rbunch <span>2:59 pm</span></div>
+                <div class="message-text">What day is tomorrow?.</div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <form id="user-input">
+          <div class="col-12">
+            <input id="user-message" class="form-control" type="text" placeholder="Enter your message">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="text-white text-center">Chatly</footer>
+</body>
+
+</html>
