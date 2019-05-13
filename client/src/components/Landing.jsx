@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Landing.css';
 
-function Landing(props) {
+function Landing({ updateUsername, history }) {
+
+  const [username, setUsername] = useState('');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!username) return;
+    updateUsername(username);
+    history.push('/dashboard');
+  }
+
   return (
     <div className="container-fluid' main">
       <div className="row main-row">
@@ -17,10 +27,10 @@ function Landing(props) {
               </div>
             </div>
             <div className="form-bottom">
-              <form className="login-form">
+              <form className="login-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label className="sr-only" for="form-username">Username</label>
-                  <input type="text" name="form-username" placeholder="Username..." className="form-username form-control" id="form-username" />
+                  <label className="sr-only" htmlFor="form-username">Username</label>
+                  <input type="text" name="form-username" placeholder="Username..." className="form-username form-control" id="form-username" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
                 <button type="submit" className="btns">Enter!</button>
               </form>
