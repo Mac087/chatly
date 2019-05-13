@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
@@ -23,12 +23,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Fragment>
-          <Navbar />
-          <Route path="/" render={props => <Landing {...props} updateUsername={this.updateUsername} />} />
-          <Route path="/dashboard" render={props => <Dashboard {...props} username={this.username} />} />
-          <Footer />
-        </Fragment>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" render={props => <Landing {...props} updateUsername={this.updateUsername} />} />
+          <Route path="/dashboard" render={props => <Dashboard {...props} username={this.state.username} />} />
+        </Switch>
+        <Footer />
       </Router>
     );
   }
