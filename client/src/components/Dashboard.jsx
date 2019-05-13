@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import '../styles/Dashboard.css';
 
-// Import Classes
+// Import Components
+import Namespaces from '../components/Namespaces.jsx'
+
+// Import Namespaces
+import initNS from '../helpers/namespaces';
 
 
 // Import Images
-import astronaut from '../assets/astronaut.svg';
-import asteroid from '../assets/asteroid.svg';
+// import astronaut from '../assets/astronaut.svg';
+// import asteroid from '../assets/asteroid.svg';
 import userIcon1 from '../assets/square-1.png';
 import userIcon2 from '../assets/square-2.png';
 import userIcon3 from '../assets/square-3.png';
@@ -16,20 +20,34 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       username: props.username,
-      namespaces: [],
-      rooms: []
+      namespaces: initNS,
+      currentNs: 0,
+      currentRoom: 0
     };
+
+    this.handleNs = this.handleNs.bind(this);
+    this.handleRoom = this.handleRoom.bind(this);
   }
 
   componentDidMount() {
-    console.log('from dashboard: ', this.state.username);
+
+  }
+
+  handleNs(e) {
+    // this.setState({ [e.target.name]: e.target.id });
+    console.log('NS: ', e.target.getAttribute('id'));
+  }
+
+  handleRoom(e) {
+    //console.log('Room: ', e.target.getAttribute('key'));
+    console.log('Room: ', e.target.key);
   }
 
   render() {
     return (
       <div className="container-fluid box">
         <div className="row box">
-          <div className="col-1 namespaces">
+          {/* <div className="col-1 namespaces">
             <div className="namespace center-block text-center mt-3" ns="/wiki"><img className="icon" alt="Astronaut Icon" src={astronaut} /></div>
             <div className="namespace center-block text-center mt-3 yolo" ns="/mozilla"><img className="icon" alt="Asteroid Icon" src={asteroid} /></div>
           </div>
@@ -39,7 +57,8 @@ class Dashboard extends Component {
               <li><i className="fab fa-slack-hash"></i> General</li>
               <li><i className="fab fa-slack-hash"></i> Events</li>
             </ul>
-          </div>
+          </div> */}
+          <Namespaces namespaces={this.state.namespaces} currentNs={this.state.currentNs} handleNs={this.handleNs} handleRoom={this.handleRoom} />
           <div className="col-9 message-form">
             <div className="room-header row mb-4">
               <div className="col-3 d-inline-block my-auto"><span className="curr-room-text">General Channel</span> <span className="curr-room-num-users">Users 3 <i className="fas fa-user"></i></span></div>
