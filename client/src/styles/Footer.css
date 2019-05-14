@@ -8,3 +8,9 @@ footer {
   /* Vertically center the text there */
   background-color: #8d97a2;
 }
+
+footer span {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 130%;
+}

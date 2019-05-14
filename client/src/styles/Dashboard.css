@@ -1,25 +1,3 @@
-.namespaces {
-  background-image: linear-gradient(#343a40, #8d97a2);
-  min-height: 100%;
-}
-
-.rooms {
-  /* background-color: #D3D9DE; */
-  background-image: linear-gradient(white, #8d97a2);
-  min-height: 100%;
-}
-
-
-.icon {
-  width: 60px;
-}
-
-.room-list li {
-  list-style-type: none;
-  padding-left: 0px;
-  margin-top: 5px;
-}
-
 .room-header {
   background-image: linear-gradient(to right, white, #8d97a2);
   min-height: 5vh;
